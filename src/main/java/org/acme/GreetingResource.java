@@ -3,6 +3,7 @@ package org.acme;
 import io.quarkus.hibernate.orm.PersistenceUnit;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -15,7 +16,7 @@ import java.util.UUID;
 @Path("/hello")
 public class GreetingResource {
     @Inject
-    @PersistenceUnit("Classes")
+    @PersistenceContext
     EntityManager entityManager;
 
 
